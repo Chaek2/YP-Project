@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form th:action="@{/profile}" method="post" th:object="${client}">
+    <label for="idClient">ID</label>
+    <input type="text" name="idClient" id="idClient" th:value="*{idClient}" readonly>
+    <br>
+    <label for="username">Логин</label>
+    <input type="text" name="username" id="username" th:value="*{username}">
+    <br>
+    <label for="password">Пароль</label>
+    <input type="text" name="password" id="password" th:value="*{password}">
+    <br>
+    <label for="idrole">Номер роли</label>
+    <input type="text" name="idrole" id="idrole" th:value="*{role.idRole}" readonly>
+    <br>
+    <input type="submit">
+</form>
+</body>
+</html>

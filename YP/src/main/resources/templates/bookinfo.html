@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--style="background-color: rgb(128,128,128);" -->
+<br>
+<div style="border: black solid 1px; padding: 20px;background-color: rgb(128,128,128);">
+    <table for="title">Название книги: </table>
+    <label id="title" th:text="${book.title}"/>
+</div>
+<br>
+    <img style="width: 400px;" th:src="${book.image}">
+<br>
+<div style="border: black solid 1px; padding: 20px;background-color: rgb(128,128,128);">
+    <table for="summary">Краткое описание: </table>
+    <label id="summary" th:text="${book.summary}"/>
+</div>
+<br>
+<div style="border: black solid 1px; padding: 20px;background-color: rgb(128,128,128);">
+    <table for="txt">Текст: </table>
+    <textarea style="width: 100%;" id="txt" th:text="${book.txt}"/>
+</div>
+<br>
+<div style="border: black solid 1px; padding: 20px;background-color: rgb(128,128,128);">
+    <table for="author">Автор: </table>
+    <label id="author" th:text="${book.author}"/>
+</div>
+<br>
+<div style="border: black solid 1px; padding: 20px;background-color: rgb(128,128,128);">
+    <table for="yearOfPublication">Дата издание: </table>
+    <label id="yearOfPublication" th:text="${book.yearOfPublication}"/>
+</div>
+<br>
+</body>
+</html>

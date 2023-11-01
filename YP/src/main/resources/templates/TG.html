@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table style="width: 100%;height: 100%">
+    <tr><td style="background-color: aquamarine">
+        <table>
+            <tr>
+                <form th:action="@{TAG/ADD}" method="post">
+                    <tr>
+                        <td><input type="text" name="table" value="Тег" disabled></td>
+                        <td>0</td>
+                        <td><input type="text" name="title"></td>
+                        <td><input type="submit"></td>
+                        <td></td>
+                    </tr>
+                </form>
+            </tr>
+            <tr th:each="art :${tag}">
+                <td><input type="text" name="table" value="Тег" disabled></td>
+                <td th:text="${art.idTag}"></td>
+                <td th:text="${art.title}"></td>
+                <td><form th:action="@{TAG/DEL}" method="post"><button type="submit" name="id" th:value="${art.idTag}">Удалить</button></form></td>
+            </tr>
+            <tr>
+                <td>Column</td>
+                <td><form th:action="@{TG}" method="post"><input type="submit" name="column" th:value="id"></form></td>
+                <td><form th:action="@{TG}" method="post"><input type="submit" name="column" th:value="title"></form></td>
+                <td></td>
+            </tr>
+        </table>
+    </td><td style="background-color: brown">
+        <table>
+            <tr>
+                <form th:action="@{GEN/ADD}" method="post">
+                    <tr>
+                        <td><input type="text" name="table" value="Жанр" disabled></td>
+                        <td>0</td>
+                        <td><input type="text" name="title"></td>
+                        <td><input type="submit"></td>
+                    </tr>
+                </form>
+            </tr>
+            <tr th:each="art :${gen}">
+                <td><input type="text" name="table" value="Жанр" disabled></td>
+                <td th:text="${art.idGenre}"></td>
+                <td th:text="${art.title}"></td>
+                <td><form th:action="@{GEN/DEL}" method="post"><button type="submit" name="id" th:value="${art.idGenre}">Удалить</button></form></td>
+            </tr>
+            <tr>
+                <td>Column</td>
+                <td><form th:action="@{TG}" method="post"><input type="submit" name="column" th:value="id"></form></td>
+                <td><form th:action="@{TG}" method="post"><input type="submit" name="column" th:value="title"></form></td>
+                <td></td>
+            </tr>
+        </table>
+    </td></tr> <!--ряд с ячейками тела таблицы-->
+</table>
+</body>
+</html>

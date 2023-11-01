@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table>
+    <tr th:each="books: ${book}">
+        <td th:text="${books.idBook}"></td>
+        <td th:text="${books.title}"></td>
+        <td><img style="width: 400px;" th:src="${books.image}"></td>
+        <td><form th:action="@{/book/info}" method="get"><button type="submit" name="idbook" th:value="${books.idBook}">Посмотреть</button></form></td>
+    </tr>
+</table>
+</body>
+</html>
